@@ -1,0 +1,65 @@
+mkadir "Nome do dir"
+
+npm init -y
+npm install express  (micro framework para as rotas e views) (para api rest so é usada as rotas)
+new file server.js
+
+node server.js - para rodar
+
+
+instalar nomdemon (toda vez que alterar o codigo o servidor atualiza sozinho)
+npm install -D nodemon (instala apenas no amnbiente de desenvolvimento)
+vai no package json e na parte de scripts adiciona um novo:
+"dev": "nodemon server.js"
+npm run dev (para rodar, usar esse agr)
+
+isntalar mongodb
+instalar normal.
+instalar pelo docker = docker permite a conteinerização de recursos, faz essas instalações em VMS pois n vai estar "instalado"
+na nossa maquina fisiica, fica um sistema a parte
+
+docker{
+    docker
+    docker pull mongo
+    docker run --name mongodb -p 27017:27017 -d mongo (porta da minha maquina vs porta da maquina externa)
+    docker ps
+    para testar localhost 27017 (vai dar um erro)
+    robo3t(site, baixa o programa)
+       cria uma nova conection -  endereço localhost e a porta 
+        vai ter acesso as bases de dados/schemas
+
+
+
+    docker start nome (caso desligue o pc e a imagem pare)       
+}
+
+instalar mongoose - ORM (object relacional mapping) DE bancos n relacionais, encapsula a logica do Bd (ao inves de usar as queries com a linguagem do bd,, 
+vai usar apenas os cod javascprit, alem de trasformar as tabelas em objetos)
+npm install mongoose
+
+
+importa o mongoose no server.js
+
+----
+criar model
+cria pasta src e dentro models
+
+instalar o require-dir (faz os requires automaticamente, pra n precisar ficar fazendo varios requires num lugar)
+npm install require-dir
+importa a require dir no serve.js
+
+--restruturar proj
+-separar rotas- 
+-separar logica
+em src criar routes.js
+em src cirar controllers  (para lidar com as operaçõs de um model)
+
+--usar um testador de rotas
+
+-paginar
+npm install mongoose-paginate
+importa no model
+muda o idnex do controller
+
+--adicionar Cors para permitir acessod e outros dominios
+npm install cors
